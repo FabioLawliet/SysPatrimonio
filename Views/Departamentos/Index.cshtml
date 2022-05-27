@@ -4,22 +4,21 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
+<h1>Departamentos</h1>
+<p class="pull-right">
+    <a asp-action="Create">Cadastrar Novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nomedepartamento)
+            <th class="col-md-4">
+                Nome
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.descricaodepartamento)
+            <th class="col-md-4">
+                Descrição
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.idlocal)
+            <th class="col-md-1">
+                Id Local
             </th>
             <th></th>
         </tr>
@@ -37,9 +36,13 @@
                 @Html.DisplayFor(modelItem => item.idlocal)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                <div class="row pull-right formBotoes">
+                    <div class="col-md-12">
+                        <a asp-action="Edit" asp-route-id="@item.id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Deletar</a>
+                    </div>
+                </div>
             </td>
         </tr>
 }

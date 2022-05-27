@@ -16,3 +16,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.btn{
+    margin-top: 10px;
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+}
+
+.pull-right {
+    text-align: right;
+}

@@ -4,43 +4,39 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>DbUsuario</h4>
+<h1>Usuários</h1>
+<h3>Cadastrar</h3>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="nome" class="control-label"></label>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-md-5">
+                <label asp-for="nome" class="control-label">Nome</label>
                 <input asp-for="nome" class="form-control" />
                 <span asp-validation-for="nome" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="login" class="control-label"></label>
+            <div class="form-group col-md-3">
+                <label asp-for="login" class="control-label">Login</label>
                 <input asp-for="login" class="form-control" />
                 <span asp-validation-for="login" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="senha" class="control-label"></label>
+            <div class="form-group col-md-3">
+                <label asp-for="senha" class="control-label">Senha</label>
                 <input asp-for="senha" class="form-control" />
                 <span asp-validation-for="senha" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="status" class="control-label"></label>
-                <input asp-for="status" class="form-control" />
+            <div class="form-group col-md-1">
+                <label asp-for="status" class="control-label">Status</label>
+                <input type="checkbox" asp-for="status" class="form-check-input form-control" style="height: 30px; width: 30px; padding: 0px; margin-top: 4px;" />
                 <span asp-validation-for="status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group pull-right">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" /> |
+                <a asp-action="Index">Voltar</a>
             </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {

@@ -5,13 +5,22 @@
 }
 
 <h1>Usuários</h1>
+<p>
+    @using (Html.BeginForm())
+    {
+        <text>Nome</text>@Html.DropDownList("Nome", new SelectList(ViewBag.Nome))
+        <text>Login</text>@Html.DropDownList("Login", new SelectList(ViewBag.Login))
+        <input type="submit" value="Procurar"/>
+    }
+</p>
+
 <p class="pull-right">
     <a asp-action="Create">Cadastrar Novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th class="col-md-4">
+            <th class="col-md-3">
                 Nome
             </th>
             <th class="col-md-3">

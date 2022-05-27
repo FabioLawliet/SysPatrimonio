@@ -47,6 +47,11 @@ namespace SysPatrimonio.Controllers
         // GET: Departamentos/Create
         public IActionResult Create()
         {
+            ViewBag.Local = (from c in _context.local
+                             select c.nomelocal).Distinct();
+
+            ViewBag.Local2 = new SelectList(_context.local, "id", "nomelocal");
+
             return View();
         }
 

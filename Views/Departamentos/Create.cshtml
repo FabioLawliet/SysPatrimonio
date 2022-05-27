@@ -6,6 +6,12 @@
 
 <h1>Departamentos</h1>
 <h3>Cadastrar</h3>
+<div class="form-group">
+    @*htmlHelpers *@
+    <text>Local</text>@Html.DropDownList("Local", new SelectList(ViewBag.Local))
+    @*Razor *@
+    <select asp-items=@ViewBag.Local2 name="nomelocal"></select>
+</div>
 <hr />
 <div class="row">
     <form asp-action="Create">

@@ -21,9 +21,16 @@ namespace SysPatrimonio.Controllers
         // GET: DbUsuarios
         public async Task<IActionResult> Index()
         {
-              return _context.usuarios != null ? 
+            ViewBag.Nome = (from c in _context.usuarios
+                            select c.nome).Distinct();
+
+            ViewBag.Login = (from c in _context.usuarios
+                             select c.login).Distinct();
+
+            return View(await _context.usuarios.ToListAsync());
+            /* return _context.usuarios != null ? 
                           View(await _context.usuarios.ToListAsync()) :
-                          Problem("Entity set 'Context.usuarios'  is null.");
+                          Problem("Entity set 'Context.usuarios'  is null.");*/
         }
 
         // GET: DbUsuarios/Details/5

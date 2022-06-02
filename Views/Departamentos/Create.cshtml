@@ -7,10 +7,11 @@
 <h1>Departamentos</h1>
 <h3>Cadastrar</h3>
 <div class="form-group">
-    @*htmlHelpers *@
-    <text>Local</text>@Html.DropDownList("Local", new SelectList(ViewBag.Local))
-    @*Razor *@
-    <select asp-items=@ViewBag.Local2 name="nomelocal"></select>
+ @*  htmlHelpers 
+    <!– <text>Local</text>@Html.DropDownList("Local", new SelectList(ViewBag.Local)) ->
+     Razor 
+    <select asp-items=@ViewBag.Local2 asp-for="idlocal" name="nomelocal" class="form-control"></select> 
+*@
 </div>
 <hr />
 <div class="row">
@@ -29,12 +30,11 @@
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="idlocal" class="control-label">Id Local</label>
-                <input asp-for="idlocal" class="form-control" />
-                <span asp-validation-for="idlocal" class="text-danger"></span>
+                <select asp-items=@ViewBag.Local2 asp-for="idlocal" class="form-control"></select>
             </div>
             <div class="form-group pull-right">
-                <input type="submit" value="Cadastrar" class="btn btn-primary" /> |
-                <a asp-action="Index">Voltar</a>
+                <input type="submit" value="Cadastrar" class="btn btn-primary" /> 
+                <a asp-action="Index" class="btn btn-primary">Voltar</a>
             </div>
         </div>
     </form>

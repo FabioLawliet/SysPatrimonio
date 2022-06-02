@@ -9726,8 +9726,8 @@
     ]
   },
   "packageFolders": {
-    "D:\\Users\\fgbezerra\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\1known\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -9735,14 +9735,14 @@
       "projectUniqueName": "C:\\Projetos\\SysPatrimonio\\SysPatrimonio.csproj",
       "projectName": "SysPatrimonio",
       "projectPath": "C:\\Projetos\\SysPatrimonio\\SysPatrimonio.csproj",
-      "packagesPath": "D:\\Users\\fgbezerra\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\1known\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\SysPatrimonio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "D:\\Users\\fgbezerra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\1known\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -9814,7 +9814,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

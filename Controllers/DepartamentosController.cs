@@ -21,9 +21,20 @@ namespace SysPatrimonio.Controllers
         // GET: Departamentos
         public async Task<IActionResult> Index()
         {
-              return _context.departamento != null ? 
+            List<DtoDepartamento> lista = (from d in _context.departamento
+                                           join l in _context.local on d.idlocal equals l.id
+                                           select new DtoDepartamento
+                                           {
+                                               id = d.id,
+                                               nomedepartamento = d.nomedepartamento,
+                                               descricaodepartamento = d.descricaodepartamento,
+                                               nomelocal = l.nomelocal
+                                           }).ToList();
+            lreturn View(lista);
+            
+            /*return _context.departamento != null ? 
                           View(await _context.departamento.ToListAsync()) :
-                          Problem("Entity set 'Context.departamento'  is null.");
+                          Problem("Entity set 'Context.departamento'  is null.");*/
         }
 
         // GET: Departamentos/Details/5

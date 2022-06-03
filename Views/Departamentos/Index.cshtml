@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SysPatrimonio.Models.DbDepartamento>
+﻿@model IEnumerable<SysPatrimonio.Models.DtoDepartamento>
 
 @{
     ViewData["Title"] = "Index";
@@ -33,7 +33,7 @@
                 @Html.DisplayFor(modelItem => item.descricaodepartamento)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idlocal)
+                @Html.DisplayFor(modelItem => item.nomelocal)
             </td>
             <td>
                 <div class="row pull-right formBotoes">

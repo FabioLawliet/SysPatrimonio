@@ -18,8 +18,12 @@ body {
 }
 
 .btn{
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 5px;
+}
+
+.btnCad {
+    margin-top: 15px;
 }
 
 h1{
@@ -28,4 +32,8 @@ h1{
 
 .pull-right {
     text-align: right;
+}
+
+.rowForm {
+    margin-top: 15px;
 }

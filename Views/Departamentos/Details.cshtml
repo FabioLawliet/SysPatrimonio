@@ -1,4 +1,4 @@
-﻿@model SysPatrimonio.Models.DbDepartamento
+﻿@model SysPatrimonio.Models.DtoDepartamento
 
 @{
     ViewData["Title"] = "Details";
@@ -8,7 +8,7 @@
 <h3>Detalhes</h3>
 <div>
     <hr />
-    <dl class="row">
+    <dl class="row rowForm">
         <dt class = "col-sm-2">
             Nome
         </dt>
@@ -22,14 +22,14 @@
             @Html.DisplayFor(model => model.descricaodepartamento)
         </dd>
         <dt class = "col-sm-2">
-            Id Local
+            Nome Local
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.idlocal)
+            @Html.DisplayFor(model => model.nomelocal)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-primary">Editar</a>
-    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btnCad btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btnCad btn-primary">Voltar</a>
 </div>

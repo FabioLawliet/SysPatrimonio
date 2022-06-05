@@ -1,4 +1,4 @@
-﻿@model SysPatrimonio.Models.DbDepartamento
+﻿@model SysPatrimonio.Models.DtoDepartamento
 
 @{
     ViewData["Title"] = "Edit";
@@ -9,7 +9,7 @@
 <hr />
 <div class="row">
     <form asp-action="Edit">
-        <div class="row">
+        <div class="row rowForm">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group col-md-4">
                 <label asp-for="nomedepartamento" class="control-label">Nome</label>
@@ -22,13 +22,12 @@
                 <span asp-validation-for="descricaodepartamento" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
-                <label asp-for="idlocal" class="control-label">Id Local</label>
-                <input asp-for="idlocal" class="form-control" />
-                <span asp-validation-for="idlocal" class="text-danger"></span>
+                <label asp-for="idlocal" class="control-label">Nome Local</label>
+                <select asp-items=@ViewBag.Local asp-for="idlocal" name="idlocal" class="form-control"></select>
             </div>
             <div class="form-group pull-right">
-                <input type="submit" value="Cadastrar" class="btn btn-primary" /> 
-                <a asp-action="Index" class="btn btn-primary">Voltar</a>
+                <input type="submit" value="Salvar Alterações" class="btn btnCad btn-success" />
+                <a asp-action="Index" class="btn btnCad btn-primary">Voltar</a>
             </div>
         </div>
     </form>

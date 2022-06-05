@@ -23,14 +23,16 @@ namespace SysPatrimonio.Controllers
         {
             List<DtoDepartamento> lista = (from d in _context.departamento
                                            join l in _context.local on d.idlocal equals l.id
+                                           orderby d.nomedepartamento
                                            select new DtoDepartamento
                                            {
                                                id = d.id,
                                                nomedepartamento = d.nomedepartamento,
                                                descricaodepartamento = d.descricaodepartamento,
-                                               nomelocal = l.nomelocal
+                                               nomelocal = l.nomelocal,
+                                               idlocal = d.idlocal
                                            }).ToList();
-            lreturn View(lista);
+            return View(lista);
             
             /*return _context.departamento != null ? 
                           View(await _context.departamento.ToListAsync()) :
@@ -45,23 +47,33 @@ namespace SysPatrimonio.Controllers
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (dbDepartamento == null)
+            var DtoDep = (from d in _context.departamento
+                         join l in _context.local on d.idlocal equals l.id
+                         where d.id == id
+                         select new DtoDepartamento
+                         {
+                             id = d.id,
+                             nomedepartamento = d.nomedepartamento,
+                             descricaodepartamento = d.descricaodepartamento,
+                             nomelocal = l.nomelocal,
+                             idlocal = d.idlocal
+                         }).First();
+
+            if (DtoDep == null)
             {
                 return NotFound();
             }
 
-            return View(dbDepartamento);
+            return View(DtoDep);
         }
 
         // GET: Departamentos/Create
         public IActionResult Create()
         {
-            ViewBag.Local = (from c in _context.local
-                             select c.nomelocal).Distinct();
+            /*ViewBag.Local = (from c in _context.local
+                             select c.nomelocal).Distinct();*/
 
-            ViewBag.Local2 = new SelectList(_context.local, "id", "nomelocal");
+            ViewBag.Local = new SelectList(_context.local, "id", "nomelocal");
 
             return View();
         }
@@ -85,17 +97,32 @@ namespace SysPatrimonio.Controllers
         // GET: Departamentos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+
             if (id == null || _context.departamento == null)
             {
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento.FindAsync(id);
-            if (dbDepartamento == null)
+            var DtoDep = (from d in _context.departamento
+                          join l in _context.local on d.idlocal equals l.id
+                          where d.id == id
+                          select new DtoDepartamento
+                          {
+                              id = d.id,
+                              nomedepartamento = d.nomedepartamento,
+                              descricaodepartamento = d.descricaodepartamento,
+                              nomelocal = l.nomelocal,
+                              idlocal = d.idlocal
+                          }).First();
+
+            if (DtoDep == null)
             {
                 return NotFound();
             }
-            return View(dbDepartamento);
+
+            ViewBag.Local = new SelectList(_context.local, "id", "nomelocal");
+
+            return View(DtoDep);
         }
 
         // POST: Departamentos/Edit/5
@@ -105,6 +132,8 @@ namespace SysPatrimonio.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,nomedepartamento,descricaodepartamento,idlocal")] DbDepartamento dbDepartamento)
         {
+
+
             if (id != dbDepartamento.id)
             {
                 return NotFound();
@@ -141,14 +170,24 @@ namespace SysPatrimonio.Controllers
                 return NotFound();
             }
 
-            var dbDepartamento = await _context.departamento
-                .FirstOrDefaultAsync(m => m.id == id);
-            if (dbDepartamento == null)
+            var DtoDep = (from d in _context.departamento
+                          join l in _context.local on d.idlocal equals l.id
+                          where d.id == id
+                          select new DtoDepartamento
+                          {
+                              id = d.id,
+                              nomedepartamento = d.nomedepartamento,
+                              descricaodepartamento = d.descricaodepartamento,
+                              nomelocal = l.nomelocal,
+                              idlocal = d.idlocal
+                          }).First();
+
+            if (DtoDep == null)
             {
                 return NotFound();
             }
 
-            return View(dbDepartamento);
+            return View(DtoDep);    
         }
 
         // POST: Departamentos/Delete/5

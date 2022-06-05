@@ -1,24 +1,33 @@
-﻿@model IEnumerable<SysPatrimonio.Models.DtoDepartamento>
+﻿@model IEnumerable<SysPatrimonio.Models.DtoPatrimonio>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Departamentos</h1>
+<h1>Patrimonios</h1>
 <p class="pull-right">
     <a asp-action="Create" class="btn btn-success">Cadastrar Novo</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th class="col-md-4">
-                Nome
+            <th class="col-md-2">
+                Núm. Etiqueta
             </th>
-            <th class="col-md-4">
-                Descrição
+            <th class="col-md-3">
+                Nome Patrimônio
+            </th>
+            <th class="col-md-2">
+                Marca/Modelo
             </th>
             <th class="col-md-1">
-                Nome Local
+                Situação
+            </th>
+            <th class="col-md-1">
+                Núm. NF
+            </th>
+            <th class="col-md-1">
+                Valor
             </th>
             <th></th>
         </tr>
@@ -27,13 +36,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.nomedepartamento)
+                @Html.DisplayFor(modelItem => item.numetiqueta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.descricaodepartamento)
+                @Html.DisplayFor(modelItem => item.nomepatrimonio)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.nomelocal)
+                @Html.DisplayFor(modelItem => item.marcamodelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.situacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numnf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorpatrimonio)
             </td>
             <td>
                 <div class="row pull-right formBotoes">
@@ -44,6 +62,7 @@
                     </div>
                 </div>
             </td>
-        </tr>}
+        </tr>
+}
     </tbody>
 </table>

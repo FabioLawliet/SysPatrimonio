@@ -267,4 +267,4 @@ C:\Projetos\SysPatrimonio\obj\Debug\net6.0\SysPatrimonio.dll
 C:\Projetos\SysPatrimonio\obj\Debug\net6.0\SysPatrimonio.pdb
 C:\Projetos\SysPatrimonio\obj\Debug\net6.0\SysPatrimonio.genruntimeconfig.cache
 C:\Projetos\SysPatrimonio\obj\Debug\net6.0\ref\SysPatrimonio.dll
-C:\Projetos\SysPatrimonio\bin\Debug\net6.0\ref\SysPatrimonio.dll
+C:\Projetos\SysPatrimonio\obj\Debug\net6.0\refint\SysPatrimonio.dll

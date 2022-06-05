@@ -1,0 +1,107 @@
+﻿@model SysPatrimonio.Models.DtoPatrimonio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Patrimonio</h1>
+<h3>Detalhes</h3>
+<div>
+    <hr />
+    <dl class="row rowForm">
+        <dt class = "col-sm-2">
+            Núm. Etiqueta
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numetiqueta)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nomepatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descricaopatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            Valor
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.valorpatrimonio)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome Categoria
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idcategoria)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome Local
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idlocal)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome Departamento
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.iddepartamento)
+        </dd>
+        <dt class = "col-sm-2">
+            Nome Fornecedor
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idfornecedor)
+        </dd>
+        <dt class = "col-sm-2">
+            Marca/Modelo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.marcamodelo)
+        </dd>
+        <dt class = "col-sm-2">
+            Data Aquisição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataaquisicao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data Baixa
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.databaixa)
+        </dd>
+        <dt class = "col-sm-2">
+            Núm. NF
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numnf)
+        </dd>
+        <dt class = "col-sm-2">
+            Núm. Série
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.numserie)
+        </dd>
+        <dt class = "col-sm-2">
+            Situação
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.situacao)
+        </dd>
+        <dt class = "col-sm-2">
+            Data Garantia
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.datagarantia)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btnCad btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btnCad btn-primary">Voltar</a>
+</div>
